@@ -1,7 +1,8 @@
-package com.example.springbootdemo.service;
+package com.example.springbootdemo.service.impl;
 
 import com.example.springbootdemo.pojo.entity.Org;
 import com.example.springbootdemo.repository.OrgRepository;
+import com.example.springbootdemo.service.OrgService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
-package com.example.springbootdemo.service;
+package com.example.springbootdemo.service.impl;
 
 import com.example.springbootdemo.pojo.entity.JpaUser;
 import com.example.springbootdemo.repository.JpaUserRepository;
+import com.example.springbootdemo.service.JpaUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
