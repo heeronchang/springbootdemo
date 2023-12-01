@@ -43,5 +43,4 @@ class SpringbootDemoApplicationTests {
 		UserInfo res = userInfoService.modify(uInfo);
 		System.out.println(res);
 	}
-
 }
