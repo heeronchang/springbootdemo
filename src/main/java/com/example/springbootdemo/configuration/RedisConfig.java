@@ -54,14 +54,13 @@ public class RedisConfig {
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(StringRedisSerializer.UTF_8))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(serializer()))
                 .disableCachingNullValues()
-                .prefixCacheNameWith("springbootdemo")
-                .entryTtl(Duration.ofMinutes(1L));
+                .prefixCacheNameWith("springboot")
+                .entryTtl(Duration.ofSeconds(300));
 
         Map<String, RedisCacheConfiguration> map = new HashMap<>();
         Set<Map.Entry<String, Long>> entries = ttlParams.entrySet();
         for (Map.Entry<String, Long> entry : entries) {
-            map.put(entry.getKey(), cfg.entryTtl(Duration.ofMinutes(entry.getValue())));
-            map.put("demo", cfg);
+            map.put(entry.getKey(), cfg.entryTtl(Duration.ofSeconds(entry.getValue())));
         }
 
         return RedisCacheManager

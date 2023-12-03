@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface UserInfoService {
     UserInfo modify(UserInfo userInfo);
+
     UserInfo findOne(Long id);
+
+    String test(int i, int j);
 }

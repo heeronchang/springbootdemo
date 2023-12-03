@@ -26,4 +26,10 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     // @CachePut
     // @CacheEvict
+
+    @Override
+    @Cacheable(value = "test")
+    public String test(int i, int j) {
+        return "test";
+    }
 }

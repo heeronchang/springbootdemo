@@ -6,15 +6,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-//@Service
 @SpringBootTest
 @Slf4j
 class RedisServiceTest {
@@ -51,6 +46,14 @@ class RedisServiceTest {
 
     @Test
     void getExpire() {
+        long expire = redisService.getExpire("springboottest::SimpleKey [1, 2]");
+        System.out.println(expire);
+
+        long expire2 = redisService.getExpire("test::SimpleKey [1, 2]");
+        System.out.println(expire2);
+
+        long expire3 = redisService.getExpire("SimpleKey [1, 2]");
+        System.out.println(expire3);
     }
 
     @Test
