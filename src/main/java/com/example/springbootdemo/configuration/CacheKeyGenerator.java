@@ -20,7 +20,6 @@ public class CacheKeyGenerator implements KeyGenerator {
         } else {
             sb.append(SimpleKey.EMPTY);
         }
-// springbootdemouserinfo::UserInfoServiceImpl:findOne:2
         return sb.toString();
     }
 }

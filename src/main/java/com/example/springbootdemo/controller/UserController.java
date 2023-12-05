@@ -1,7 +1,7 @@
 package com.example.springbootdemo.controller;
 
-import com.example.springbootdemo.pojo.entity.JpaUser;
-import com.example.springbootdemo.service.JpaUserService;
+import com.example.springbootdemo.pojo.entity.User;
+import com.example.springbootdemo.service.UserService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     @Resource
-    JpaUserService jpaUserService;
+    UserService jpaUserService;
 
     @PostMapping("")
-    public JpaUser addUser(@RequestBody JpaUser user) {
+    public User addUser(@RequestBody User user) {
         return jpaUserService.insert(user);
     }
 
@@ -24,17 +24,17 @@ public class UserController {
     }
 
     @PutMapping("")
-    public JpaUser update(@RequestBody JpaUser user) {
+    public User update(@RequestBody User user) {
         return jpaUserService.update(user);
     }
 
     @GetMapping("/{id}")
-    public JpaUser findOne(@PathVariable("id") Long id) {
-        return jpaUserService.jpaUser(id);
+    public User findOne(@PathVariable("id") Long id) {
+        return jpaUserService.user(id);
     }
 
     @GetMapping("")
-    public List<JpaUser> findAll() {
-        return jpaUserService.jpaUser();
+    public List<User> findAll() {
+        return jpaUserService.users();
     }
 }

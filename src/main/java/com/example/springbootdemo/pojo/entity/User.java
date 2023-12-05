@@ -13,9 +13,9 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "JPA_USER")
+@Table(name = "t_user")
 @EntityListeners(AuditingEntityListener.class)
-public class JpaUser {
+public class User {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +28,12 @@ public class JpaUser {
 
     @Column(name = "ORG_ID")
     private Long orgId;
+
+    @Column(name = "account")
+    private String account;
+
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "OBJECT_VERSION")
     @Version
