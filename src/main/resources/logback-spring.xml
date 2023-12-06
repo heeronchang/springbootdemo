@@ -21,7 +21,7 @@
     </logger>
 
     <!--    打印mybatis sql-->
-    <logger name="com.example.springbootdemo.mapper" level="DEBUG"/>
+    <logger name="com.example.springbootdemo.dao" level="DEBUG"/>
 
     <!--   spring security 日志级别-->
     <logger name="org.springframework.security" level="INFO"/>

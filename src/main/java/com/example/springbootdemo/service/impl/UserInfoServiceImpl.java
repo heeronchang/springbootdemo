@@ -1,6 +1,6 @@
 package com.example.springbootdemo.service.impl;
 
-import com.example.springbootdemo.mapper.UserInfoMapper;
+import com.example.springbootdemo.dao.UserInfoMapper;
 import com.example.springbootdemo.pojo.UserInfo;
 import com.example.springbootdemo.pojo.entity.Org;
 import com.example.springbootdemo.pojo.entity.User;

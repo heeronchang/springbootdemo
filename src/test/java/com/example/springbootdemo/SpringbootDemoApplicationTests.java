@@ -42,4 +42,9 @@ class SpringbootDemoApplicationTests {
         countDownLatch.await();
         log.info("count = {}", this.count);
     }
+
+    @Test
+    void testWhat() {
+//        String s =
+    }
 }
