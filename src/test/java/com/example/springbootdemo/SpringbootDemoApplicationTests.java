@@ -6,6 +6,7 @@ import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 
@@ -15,6 +16,9 @@ class SpringbootDemoApplicationTests {
 
     @Autowired
     RedissonClient redissonClient;
+
+    @Autowired
+    TestxxMapper testxxMapper;
 
     // 计数器
     private int count;
@@ -46,5 +50,12 @@ class SpringbootDemoApplicationTests {
     @Test
     void testWhat() {
 //        String s =
+        Testxx xx = new Testxx();
+        xx.setName("111");
+        xx.setCreatedBy("11-11");
+        testxxMapper.insert(xx);
+
+        List<Testxx> xxs =testxxMapper.selectAll();
+        testxxMapper.deleteByPrimaryKey(1);
     }
 }
