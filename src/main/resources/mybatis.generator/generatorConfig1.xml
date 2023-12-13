@@ -22,7 +22,8 @@
         <javaModelGenerator targetPackage="com.example.springbootdemo.pojo" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
-            <property name="rootClass" value="com.example.springbootdemo.pojo.BaseMode"/>
+<!--            继承基类繁琐，暂时也没研究明白xml怎么继承-->
+<!--            <property name="rootClass" value="com.example.springbootdemo.pojo.BaseMode"/>-->
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
@@ -34,13 +35,15 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="%">
-            <ignoreColumn column="id"/>
-            <ignoreColumn column="created_at"/>
-            <ignoreColumn column="created_by"/>
-            <ignoreColumn column="modified_at"/>
-            <ignoreColumn column="modified_by"/>
-        </table>
+        <table tableName="orders" domainObjectName="Order"/>
+
+        <!--        <table tableName="%">-->
+        <!--&lt;!&ndash;            <ignoreColumn column="id"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <ignoreColumn column="created_at"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <ignoreColumn column="created_by"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <ignoreColumn column="modified_at"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <ignoreColumn column="modified_by"/>&ndash;&gt;-->
+        <!--        </table>-->
 
     </context>
 </generatorConfiguration>
