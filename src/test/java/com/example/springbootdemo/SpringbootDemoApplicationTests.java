@@ -17,9 +17,6 @@ class SpringbootDemoApplicationTests {
     @Autowired
     RedissonClient redissonClient;
 
-    @Autowired
-    TestxxMapper testxxMapper;
-
     // 计数器
     private int count;
 
@@ -45,17 +42,5 @@ class SpringbootDemoApplicationTests {
         }
         countDownLatch.await();
         log.info("count = {}", this.count);
-    }
-
-    @Test
-    void testWhat() {
-//        String s =
-        Testxx xx = new Testxx();
-        xx.setName("111");
-        xx.setCreatedBy("11-11");
-        testxxMapper.insert(xx);
-
-        List<Testxx> xxs =testxxMapper.selectAll();
-        testxxMapper.deleteByPrimaryKey(1);
     }
 }
