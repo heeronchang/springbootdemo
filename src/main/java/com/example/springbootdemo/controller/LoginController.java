@@ -1,18 +1,12 @@
 package com.example.springbootdemo.controller;
 
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Arrays;
-import java.util.List;
-
-@RestController
-@RequestMapping("/auth")
+@Controller
 public class LoginController {
-
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    @PreAuthorize("hasAuthority('auth:test')")
-    public List<String> users() {
-        return List.of("1","2","3");
+    @GetMapping("/login")
+    String login() {
+        return "loginpage";
     }
 }
