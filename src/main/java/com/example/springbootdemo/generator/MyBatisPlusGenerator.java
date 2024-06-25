@@ -33,10 +33,16 @@ public class MyBatisPlusGenerator {
                 )
                 .strategyConfig(builder -> builder
                         .addInclude("user") // 设置需要生成的表名 addTablePrefix设置过滤表前缀
+                        .mapperBuilder()
+                        .enableFileOverride() // 开启文件覆盖
+                        .serviceBuilder()
+//                        .enableFileOverride()
                         .entityBuilder()
+                        .enableFileOverride()
                         .enableLombok() // 启用 Lombok
                         .enableTableFieldAnnotation()  // 启用字段注解
                         .controllerBuilder()
+//                        .enableFileOverride()
                         .enableRestStyle() // 启用 REST 风格
                 )
                 .templateEngine(new FreemarkerTemplateEngine())

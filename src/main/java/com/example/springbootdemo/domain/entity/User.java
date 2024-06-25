@@ -13,7 +13,7 @@ import lombok.Setter;
  * </p>
  *
  * @author heeron
- * @since 2024-06-12 18:00:21
+ * @since 2024-06-21 18:17:07
  */
 @Getter
 @Setter
@@ -27,6 +27,12 @@ public class User implements Serializable {
      */
     @TableId("id")
     private Long id;
+
+    @TableField("username")
+    private String username;
+
+    @TableField("password")
+    private String password;
 
     /**
      * 姓名

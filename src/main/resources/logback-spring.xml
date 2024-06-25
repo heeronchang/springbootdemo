@@ -25,6 +25,7 @@
 
     <!--   spring security 日志级别-->
     <logger name="org.springframework.security" level="INFO"/>
+<!--    <logger name="com.zaxxer.hikari" level="WARN"/>-->
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
