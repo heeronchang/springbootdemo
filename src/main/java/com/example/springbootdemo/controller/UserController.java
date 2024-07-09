@@ -15,7 +15,7 @@ import java.util.List;
  * @since 2024-06-21 17:33:09
  */
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/business/user")
 public class UserController {
     @GetMapping("/users")
     public List<String> users() {

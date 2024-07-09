@@ -71,11 +71,12 @@ public class SecurityConfiguration {
         return httpSecurity.build();
     }
 
+    // 业务接口授权控制
     @Bean
-    SecurityFilterChain apiFilterChain(HttpSecurity httpSecurity) throws Exception {
+    SecurityFilterChain businessApiFilterChain(HttpSecurity httpSecurity) throws Exception {
         baseSettings(httpSecurity);
         httpSecurity
-                .securityMatcher("/api/**")
+                .securityMatcher("/api/business/**")
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest()
                         .authenticated()
@@ -84,6 +85,23 @@ public class SecurityConfiguration {
         httpSecurity.addFilterBefore(
                 new JwtTokenAuthenticationFilter(applicationContext.getBean(JwtUtils.class)),
                 UsernamePasswordAuthenticationFilter.class);
+
+        return httpSecurity.build();
+    }
+
+    // open api
+    @Bean
+    SecurityFilterChain openApiFilterChain(HttpSecurity httpSecurity) throws Exception {
+        baseSettings(httpSecurity);
+        httpSecurity
+                .securityMatcher("/api/open/**")
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest()
+                        .permitAll()
+                );
+
+        // no needs to add filter
+        // httpSecurity.addFilterBefore();
 
         return httpSecurity.build();
     }

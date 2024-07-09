@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api/ping")
+@RequestMapping("/api/business/ping")
 public class PingController {
 
     @GetMapping
